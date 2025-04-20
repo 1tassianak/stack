@@ -1,3 +1,6 @@
+#ifndef STACK_PUB_H
+#define STACK_PUB_H
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -30,3 +33,5 @@ int cleanStack(pStack p);
 // **** "Operações de acesso" ****
 // Retorna uma cópia do dado do topo
 int top(pStack p, void *top);
+
+#endif /*STACK_PUB_H*/
