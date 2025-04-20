@@ -108,6 +108,7 @@ int main(int argc, char *argv[]) {
 
     // Desempilhando por tipo, mesma lógica do topo
     printf("\nDesempilhando todos:\n");
+    //enquando for possível desempilhar (while(1) indica sucesso), quando falhar = 0, para de desempilhar
     while (1) {
         if (tipo == 0) {
             int valor;
