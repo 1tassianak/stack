@@ -4,14 +4,17 @@
 
 // "Construtor": aloca memória e inicializa as variáveis
 int stack(ppStack pp, int size, int sizedata){
-    //1 - Alocar memória para a estrutura PE
+    //1- verificar se os dados são válidos
+    if(pp == NULL || size <= 0 || sizedata <=0) return FAIL;
+    
+    //2 - Alocar memória para a estrutura PE
     //*pp = malloc(...) para alocar o que ele aponta (o pStack)
     *pp = malloc(sizeof(PE));
 
     //verificar se a alocação deu certo e não for NULL
     if (*pp == NULL) return FAIL;
 
-    //2 - Alocar memória para os dados (void* dados)
+    //3 - Alocar memória para os dados (void* dados)
     //como no main arg = (int*) malloc(sizeof(int)*(rlines)); já tem sizeof(int):
     (*pp)->dados = malloc(size * sizedata);
     
@@ -21,7 +24,7 @@ int stack(ppStack pp, int size, int sizedata){
         return FAIL;
     }
 
-    //3 - Acessar e inicializar os campos da estrutura
+    //4 - Acessar e inicializar os campos da estrutura
     (*pp)->topo = 0;
     (*pp)->tamanho_max = size;
     (*pp)->size_data = sizedata;
