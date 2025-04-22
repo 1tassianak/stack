@@ -1,6 +1,8 @@
 #ifndef STACK_PRI_H
 #define STACK_PRI_H
 
+#include "stack_pub.h"
+
 typedef struct PE{
     void* dados; //ponteiro para os dados genéricos que serão armazenados
     int topo; //índice do topo (posição da próxima inserção de dados)

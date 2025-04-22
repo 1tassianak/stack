@@ -39,9 +39,10 @@ int unstack(ppStack pp){
     //verifica se o ponteiro *pp (que aponta para a estrutura) é nulo
     if((pp == NULL || *pp == NULL)) return FAIL;
 
-    //libera o ponteiro de dados
-    free((*pp)->dados);
-    //depois libera o ponteiro da estrutura
+    //chama a função de limpeza pasando *pp que é aceito como parâmetro p da função
+    cleanStack(*pp);
+
+    //libera o ponteiro da estrutura
     free(*pp);
 
     //inicializa com NULL
